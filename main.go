@@ -25,8 +25,9 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/common/log"
 	"gopkg.in/alecthomas/kingpin.v2"
+
 	//Required for debugging
-	//_ "net/http/pprof"
+	_ "net/http/pprof"
 )
 
 var (
