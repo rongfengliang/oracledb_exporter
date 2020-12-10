@@ -25,8 +25,9 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/prometheus/common/log"
 	"gopkg.in/alecthomas/kingpin.v2"
+
 	//Required for debugging
-	//_ "net/http/pprof"
+	_ "net/http/pprof"
 )
 
 var (
@@ -549,7 +550,7 @@ func main() {
 
 	// See more info on https://github.com/prometheus/client_golang/blob/master/prometheus/promhttp/http.go#L269
 	opts := promhttp.HandlerOpts{
-		ErrorLog: log.NewErrorLogger(),
+		ErrorLog:      log.NewErrorLogger(),
 		ErrorHandling: promhttp.ContinueOnError,
 	}
 	http.Handle(*metricPath, promhttp.HandlerFor(prometheus.DefaultGatherer, opts))
