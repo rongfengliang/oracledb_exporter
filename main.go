@@ -17,7 +17,7 @@ import (
 
 	"github.com/BurntSushi/toml"
 
-	_ "github.com/mattn/go-oci8"
+	_ "github.com/godror/godror"
 
 	"fmt"
 
@@ -100,7 +100,7 @@ func atoi(stringValue string) int {
 
 func connect(dsn string) *sql.DB {
 	log.Debugln("Launching connection: ", dsn)
-	db, err := sql.Open("oci8", dsn)
+	db, err := sql.Open("godror", dsn)
 	if err != nil {
 		log.Errorln("Error while connecting to", dsn)
 		panic(err)

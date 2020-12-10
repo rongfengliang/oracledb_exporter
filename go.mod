@@ -3,9 +3,9 @@ module github.com/iamseth/oracledb_exporter
 go 1.14
 
 require (
-	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	github.com/BurntSushi/toml v0.3.1
 	github.com/beorn7/perks v1.0.0
+	github.com/godror/godror v0.20.10
 	github.com/golang/protobuf v1.3.1
 	github.com/mattn/go-oci8 v0.0.8
 	github.com/matttproud/golang_protobuf_extensions v1.0.1
@@ -14,4 +14,5 @@ require (
 	github.com/prometheus/common v0.6.0
 	github.com/prometheus/procfs v0.0.2
 	golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a
+	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 )
