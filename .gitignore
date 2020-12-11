@@ -5,3 +5,4 @@ dist/
 *.pub
 oci8.pc
 oracledb_exporter
+oracledb_exporter_*
