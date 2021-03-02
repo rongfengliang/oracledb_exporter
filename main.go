@@ -17,7 +17,7 @@ import (
 
 	"github.com/BurntSushi/toml"
 
-	_ "github.com/mattn/go-oci8"
+	_ "github.com/sijms/go-ora"
 
 	"fmt"
 
@@ -103,7 +103,7 @@ func atoi(stringValue string) int {
 
 func connect(dsn string) *sql.DB {
 	log.Debugln("Launching connection: ", dsn)
-	db, err := sql.Open("oci8", dsn)
+	db, err := sql.Open("oracle", dsn)
 	if err != nil {
 		log.Errorln("Error while connecting to", dsn)
 		panic(err)
@@ -552,7 +552,7 @@ func main() {
 
 	// See more info on https://github.com/prometheus/client_golang/blob/master/prometheus/promhttp/http.go#L269
 	opts := promhttp.HandlerOpts{
-		ErrorLog: log.NewErrorLogger(),
+		ErrorLog:      log.NewErrorLogger(),
 		ErrorHandling: promhttp.ContinueOnError,
 	}
 	http.Handle(*metricPath, promhttp.HandlerFor(prometheus.DefaultGatherer, opts))
